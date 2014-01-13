@@ -111,7 +111,7 @@ module Flatfish
     def db_conn
       ActiveRecord::Base.establish_connection(
                                         :adapter=> "mysql2",
-                                        :host => @config['db_host'],
+                                        :host => @config['db_host'] || 'localhost',
                                         :username => @config['db_user'],
                                         :password => @config['db_pass'],
                                         :database=> @config['db']
